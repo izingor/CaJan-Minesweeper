@@ -1,9 +1,9 @@
 body {
-    background-color: black;
+    background-color: #35589A;
 }
 
 .main-container {
-    background-color: lightgreen;
+    background-color: #35589A;
     position: relative;
     height: 90vh;
     width: 55rem;
@@ -18,16 +18,17 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: lightslategray;
+    background-color: #35589A;
     width: 20rem;
     height: 5rem;
     top: 2%;
-    /* left: 2%; */
+    color: #F14A16;
+    font-size: 5rem;
 }
 
 .board {
     position: absolute;
-    background-color: midnightblue;
+    background-color: #35589A;
     height: 40rem;
     width: 40rem;
     display: flex;
@@ -40,7 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: lightsalmon;
+    background-color: #35589A;
     width: 5rem;
     height: 20rem;
     top: 30%;
@@ -52,7 +53,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: mediumturquoise;
+    background-color: #35589A;
     width: 30rem;
     height: 5rem;
     bottom: 2%;
@@ -64,17 +65,35 @@ body {
     text-align: center;
     font-size: 1.5em;
     color: black;
-    background-color: magenta;
+    background-color: #FC9918;
+    transition: 1s;
+    border-radius: 0.5rem;
 }
 
 .board td:hover {
-    background-color: blue;
+    background-color: #F14A16;
+    transform: scale(0.95);
 }
 
 .hide {
     font-size: 0;
 }
 
+.difficulty {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: #35589A;
+    width: 5rem;
+    height: 20rem;
+    top: 30%;
+    right: 2%;
+}
+
+.diff1,
+.diff2,
+.diff3,
+.smiley,
 .timer {
     display: flex;
     justify-content: center;
@@ -82,17 +101,28 @@ body {
     position: absolute;
     width: 5rem;
     height: 5rem;
-    background-color: burlywood;
+    background-color: #FC9918;
     color: black;
+    border-radius: 1rem;
+    transition: 1s;
 }
 
-.smiley {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    background-color: red;
-    color: black;
+.diff1:hover,
+.diff2:hover,
+.diff3:hover,
+.smiley:hover {
+    transform: scale(0.9);
+    background-color: #F14A16;
+}
+
+.diff1 {
+    bottom: 0%;
+}
+
+.diff2 {
+    bottom: 7.5rem;
+}
+
+.diff3 {
+    top: 0%;
 }

@@ -12,15 +12,19 @@
 <body onload="init()">
 
     <div class="main-container" oncontextmenu="return false">
-        <div class="headline"></div>
+        <div class="headline">MineSweeper</div>
         <div class="buttons">
             <div onclick="restart()" class="smiley">Start</div>
         </div>
         <div class="score">
             <div class="timer"></div>
         </div>
+        <div class="difficulty">
+            <div class="diff diff1" onclick="difficulty(this)"></div>
+            <div class="diff diff2" onclick="difficulty(this)"></div>
+            <div class="diff diff3" onclick="difficulty(this)"></div>
+        </div>
         <div class="board">
-
         </div>
 
     </div>

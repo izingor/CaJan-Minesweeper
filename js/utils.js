@@ -34,9 +34,10 @@ function buildBoard() {
             board[i][j] = cell;
         }
     }
-    // board[1][1].isMine = true;
-    // board[0][0].isMine = true;
-    // board[2][3].isMine = true;
+    board[1][1].isMine = true;
+    board[0][0].isMine = true;
+    board[2][3].isMine = true;
+
 
     return board;
 }
@@ -45,7 +46,14 @@ function buildBoard() {
 
 
 
-
+function createMines() {
+    var minesPlaced = 0;
+    for (var i = 0; i < gLevel.MINES; i++) {
+        var randomI = getRandomInt(1, gLevel.SIZE - 1);
+        var randomJ = getRandomInt(1, gLevel.SIZE - 1);
+        board[randomI][randomJ].isMine = true;
+    }
+}
 
 
 function renderCell(i, j, value) {
@@ -66,5 +74,8 @@ function timer() {
         var delta = Date.now() - timestamp;
 
         elTimer.innerText = delta / 1000;
+        if (gGame.markedCount === gLevel.MINES &&
+            gGame.shownCount === (gLevel.SIZE ** 2) - gLevel.MINES) victory();
+        console.log('shown count:', gGame.shownCount, 'markedCount:', gGame.markedCount);
     }, 41);
 }

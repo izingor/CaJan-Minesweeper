@@ -4,21 +4,26 @@ console.log('app');
 
 var gInterval;
 var gBoard;
-var gLevel = {
-    SIZE: 6,
-    MINES: 2
-};
-var gGame = {
-    isOn: false,
-    shownCount: 0,
-    markedCount: 0,
-    secsPassed: 0
-};
+var gLevel;
+var gGame;
 
 
 
 
 function init() {
+
+    gLevel = {
+        SIZE: 6,
+        MINES: 2
+    };
+    gGame = {
+        isOn: false,
+        shownCount: 0,
+        markedCount: 0,
+        secsPassed: 0
+    };
+    // gGame.isOn = true;
+
 
     gBoard = buildBoard();
     printMat(gBoard);
@@ -30,9 +35,9 @@ function init() {
 
 
 function restart() {
-    gGame.isOn = true;
     clearInterval(gInterval);
     init();
+    gGame.isOn = true;
     timer();
 }
 
@@ -53,7 +58,10 @@ function gameOver() {
 
 
 function victory() {
-
+    clearInterval(gInterval);
+    gGame.isShown = false;
+    // gLevel = null;
+    // gGame = null;
 }
 
 
@@ -76,7 +84,7 @@ function clicked(ev) {
     gBoard[idx, jdx].isShown = true;
     gGame.shownCount++;
     renderCell(idx, jdx, minesCount);
-    console.log(gGame.shownCount);
+
 }
 
 
@@ -89,6 +97,7 @@ function openArea(cellI, cellJ, gBoard) {
             if (i === cellI && j === cellJ) continue;
             if (j < 0 || j >= gBoard[i].length) continue;
             if (gBoard[i][j].isShown) continue;
+
             renderCell(i, j, minesCount);
             gBoard[i][j].isShown = true;
             gGame.shownCount++;
@@ -96,6 +105,7 @@ function openArea(cellI, cellJ, gBoard) {
         }
     }
     // console.log(gGame.shownCount);
+    // console.table(gBoard);
 }
 
 function setMinesNegsCount(cellI, cellJ, mat) {
@@ -119,5 +129,7 @@ function mark(ev) {
     var jdx = +ev.className.charAt(3);
     gBoard[idx][jdx].isMarked = true;
     renderCell(idx, jdx, '+');
+    gGame.markedCount++;
+    console.log(gGame.markedCount);
 
 }
