@@ -1,0 +1,98 @@
+body {
+    background-color: black;
+}
+
+.main-container {
+    background-color: lightgreen;
+    position: relative;
+    height: 90vh;
+    width: 55rem;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: lightslategray;
+    width: 20rem;
+    height: 5rem;
+    top: 2%;
+    /* left: 2%; */
+}
+
+.board {
+    position: absolute;
+    background-color: midnightblue;
+    height: 40rem;
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: lightsalmon;
+    width: 5rem;
+    height: 20rem;
+    top: 30%;
+    left: 2%;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: mediumturquoise;
+    width: 30rem;
+    height: 5rem;
+    bottom: 2%;
+}
+
+.board td {
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+    background-color: magenta;
+}
+
+.board td:hover {
+    background-color: blue;
+}
+
+.hide {
+    font-size: 0;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: burlywood;
+    color: black;
+}
+
+.smiley {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    color: black;
+}
