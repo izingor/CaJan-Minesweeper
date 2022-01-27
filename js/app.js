@@ -47,12 +47,13 @@ function restart() {
 
 function clicked(ev) {
     if (!gGame.isOn) return;
+
     var idx = +ev.className.charAt(1);
     var jdx = +ev.className.charAt(3);
     var cell = gBoard[idx][jdx];
+
     if (cell.isShown === true) return;
     if (cell.isMarked) return
-
     if (cell.isMine) {
         document.querySelector(`.life-${gLevel.LIVES}`).innerText = '';
         gLevel.LIVES--;
@@ -67,10 +68,8 @@ function clicked(ev) {
             document.querySelector('.board').classList.remove('shake-effect');
         }, 750);
 
-
         checkVictory();
         if (gLevel.LIVES === 0) gameOver();
-
         return;
     }
 
