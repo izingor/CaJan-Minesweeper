@@ -68,7 +68,7 @@ function timer() {
     gInterval = setInterval(function() {
         var delta = (Date.now() - timestamp) / 1000;
 
-        elTimer.innerText = Math.floor(delta);
+        elTimer.innerText = `time ${Math.floor(delta)}`;
     }, 41);
 }
 

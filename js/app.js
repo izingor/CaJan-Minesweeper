@@ -40,7 +40,7 @@ function restart() {
     for (var i = 1; i <= gLevel.LIVES; i++) {
         document.querySelector(`.life-${i}`).innerText = '💚';
     }
-    document.querySelector('.marked').innerText = gGame.markedCount;
+    document.querySelector('.marked').innerText = `📍 ${gGame.markedCount}`;
     document.querySelector('.smiley').innerText = '🤠';
 }
 
@@ -58,7 +58,6 @@ function clicked(ev) {
         gLevel.LIVES--;
         renderCell(idx, jdx, '💣');
         cell.isMarked = true;
-
         document.querySelector('.board').classList.add('shake-effect');
         document.querySelector('.smiley').classList.add('shake-effect');
 
@@ -133,13 +132,13 @@ function mark(ev) {
         cell.isMarked = false;
         renderCell(idx, jdx, '');
         gGame.markedCount--;
-        document.querySelector('.marked').innerText = gGame.markedCount;
+        document.querySelector('.marked').innerText = `📍 ${gGame.markedCount}`;
         return;
     };
     cell.isMarked = true;
     renderCell(idx, jdx, '📍');
     gGame.markedCount++;
-    document.querySelector('.marked').innerText = gGame.markedCount;
+    document.querySelector('.marked').innerText = `📍 ${gGame.markedCount}`;
     checkVictory();
 }
 
@@ -160,7 +159,6 @@ function difficulty(ev) {
             gLevel.MINES = 15;
             break;
     }
-    console.log(gLevel.SIZE);
     clearInterval(gInterval);
     init();
 }
@@ -180,7 +178,6 @@ function checkVictory() {
         victory();
 
 
-    console.log('flagged:', flaggedCount, 'shownCount:', shownCount);
 }
 
 function victory() {

@@ -78,7 +78,7 @@ body {
 }
 
 .clicked {
-    background-color: #ddffbc;
+    background-color: #701b57;
 }
 
 .hide {
@@ -129,12 +129,10 @@ body {
 }
 
 .diff2 {
-    /* bottom: 7.5rem; */
     font-size: 1rem;
 }
 
 .diff3 {
-    /* top: 0%; */
     right: 0%;
     font-size: 1rem;
 }
