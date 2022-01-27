@@ -31,6 +31,7 @@ function init() {
 
 function restart() {
     clearInterval(gInterval);
+    document.querySelector('.smiley').classList.remove('scaling');
     document.querySelector('.msg').classList.add('hide');
     gGame.isOn = true;
     gGame.markedCount = 0;
@@ -190,6 +191,7 @@ function victory() {
     clearInterval(gInterval);
     gGame.isOn = false;
     document.querySelector('.smiley').innerText = '😎';
+    document.querySelector('.smiley').classList.add('scaling');
 }
 
 function gameOver() {
@@ -197,6 +199,7 @@ function gameOver() {
     clearInterval(gInterval);
     document.querySelector('.smiley').innerText = '☹️';
     document.querySelector('.msg').classList.remove('hide');
+    document.querySelector('.smiley').classList.add('scaling');
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[0].length; j++) {
             if (gBoard[i][j].isMine) renderCell(i, j, '💣');
