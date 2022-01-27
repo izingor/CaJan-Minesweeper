@@ -1,9 +1,10 @@
 body {
     background-color: #35589A;
+    font-family: 'Fredoka One', cursive;
 }
 
 .main-container {
-    background-color: #35589A;
+    background-color: yellow;
     position: relative;
     height: 90vh;
     width: 55rem;
@@ -18,34 +19,35 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: #35589A;
+    background-color: black;
     width: 20rem;
-    height: 5rem;
+    height: 3rem;
     top: 2%;
     color: #F14A16;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .board {
     position: absolute;
-    background-color: #35589A;
-    height: 40rem;
-    width: 40rem;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-color: lightseagreen;
+    height: 30rem;
+    width: 30rem;
+    display: flex;
+    top: 18rem;
 }
 
-.buttons {
+.lives {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     background-color: #35589A;
-    width: 5rem;
-    height: 20rem;
-    top: 30%;
-    left: 2%;
+    width: 12rem;
+    height: 4rem;
+    top: 13.5rem;
+    /* left: auto; */
 }
 
 .score {
@@ -53,10 +55,10 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: #35589A;
+    background-color: blue;
     width: 30rem;
-    height: 5rem;
-    bottom: 2%;
+    height: 3rem;
+    top: 10rem;
 }
 
 .board td {
@@ -76,35 +78,37 @@ body {
 }
 
 .hide {
-    font-size: 0;
+    visibility: hidden;
 }
 
 .difficulty {
     display: flex;
     justify-content: center;
     position: absolute;
-    background-color: #35589A;
-    width: 5rem;
-    height: 20rem;
-    top: 30%;
-    right: 2%;
+    background-color: red;
+    width: 20rem;
+    height: 5rem;
+    bottom: 1%;
+    /* right: %; */
 }
 
 .diff1,
 .diff2,
 .diff3,
 .smiley,
-.timer {
+.timer,
+.marked {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     width: 5rem;
-    height: 5rem;
+    height: 3rem;
     background-color: #FC9918;
     color: black;
     border-radius: 1rem;
     transition: 1s;
+    font-size: 20px;
 }
 
 .diff1:hover,
@@ -116,13 +120,101 @@ body {
 }
 
 .diff1 {
-    bottom: 0%;
+    /* bottom: 0%; */
+    left: 0%;
 }
 
 .diff2 {
-    bottom: 7.5rem;
+    /* bottom: 7.5rem; */
 }
 
 .diff3 {
-    top: 0%;
+    /* top: 0%; */
+    right: 0%;
+}
+
+.timer {
+    right: 0%;
+}
+
+.marked {
+    left: 0%;
+}
+
+.life-1,
+.life-2,
+.life-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: #FC9918;
+    color: black;
+    border-radius: 1rem;
+    transition: 1s;
+    font-size: 20px;
+}
+
+.life-1 {
+    left: 0%;
+}
+
+.life-3 {
+    right: 0%;
+}
+
+.shake-effect {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-3deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(3deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 20rem;
+    height: 15rem;
+    top: 25.5rem;
+    z-index: 1;
+    color: royalblue;
+    font-size: 50px;
 }

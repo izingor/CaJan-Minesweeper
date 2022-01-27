@@ -17,16 +17,13 @@ function printMat(mat) {
     elBoard.innerHTML = strHTML;
 }
 
-
-
-function buildBoard() {
-    var SIZE = 6;
+function buildBoard(size, mines) {
     var board = [];
-    for (var i = 0; i < SIZE; i++) {
+    for (var i = 0; i < size; i++) {
         board.push([]);
-        for (var j = 0; j < SIZE; j++) {
+        for (var j = 0; j < size; j++) {
             var cell = {
-                // minesAroundCount: 0,
+
                 isShown: false,
                 isMine: false,
                 isMarked: false
@@ -34,34 +31,32 @@ function buildBoard() {
             board[i][j] = cell;
         }
     }
-    board[1][1].isMine = true;
-    board[0][0].isMine = true;
-    board[2][3].isMine = true;
-
+    createMines(board, mines);
 
     return board;
 }
 
-
-
-
-
-function createMines() {
-    var minesPlaced = 0;
-    for (var i = 0; i < gLevel.MINES; i++) {
-        var randomI = getRandomInt(1, gLevel.SIZE - 1);
-        var randomJ = getRandomInt(1, gLevel.SIZE - 1);
-        board[randomI][randomJ].isMine = true;
+function createMines(board) {
+    var cells = [];
+    for (var i = 0; i < gLevel.SIZE; i++) {
+        for (var j = 0; j < gLevel.SIZE; j++) {
+            cells.push({ i: i, j: j });
+        }
     }
+    cells = shuffleArray(cells);
+
+    for (var i = 0; i < gLevel.MINES; i++) {
+        board[cells[i].i][cells[i].j].isMine = true;
+    }
+    // var randomI = getRandomInt(1, gLevel.SIZE - 1);
+    // var randomJ = getRandomInt(1, gLevel.SIZE - 1);
+    // board[randomJ][randomI].isMine = true;
 }
 
-
 function renderCell(i, j, value) {
-    // console.log(i, j);
     var elCell = document.querySelector(`.c${i}-${j}`);
     elCell.innerText = value;
 }
-
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -71,11 +66,30 @@ function timer() {
     var timestamp = Date.now();
     var elTimer = document.querySelector('.timer');
     gInterval = setInterval(function() {
-        var delta = Date.now() - timestamp;
+        var delta = (Date.now() - timestamp) / 1000;
 
-        elTimer.innerText = delta / 1000;
-        if (gGame.markedCount === gLevel.MINES &&
-            gGame.shownCount === (gLevel.SIZE ** 2) - gLevel.MINES) victory();
-        console.log('shown count:', gGame.shownCount, 'markedCount:', gGame.markedCount);
+        // switch (delta) {
+        //     case delta < 10:
+        //         delta = delta.toString()
+        //         delta = delta.substring(0, 3);
+        //         elTimer.innerText = delta
+        //         break;
+        //     case delta > 10:
+        //         delta = delta.toString()
+        //         delta = delta.substring(0, 2);
+        //         break;
+        //     }
+        elTimer.innerText = delta
     }, 41);
+}
+
+
+function shuffleArray(cells) {
+    for (var i = cells.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = cells[i];
+        cells[i] = cells[j];
+        cells[j] = temp;
+    }
+    return cells;
 }

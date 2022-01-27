@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minesweeper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -13,17 +14,22 @@
 
     <div class="main-container" oncontextmenu="return false">
         <div class="headline">MineSweeper</div>
-        <div class="buttons">
-            <div onclick="restart()" class="smiley">Start</div>
+        <div class="lives">
+            <div class="life-1">❤️</div>
+            <div class="life-2">❤️</div>
+            <div class="life-3">❤️</div>
         </div>
         <div class="score">
-            <div class="timer"></div>
+            <div onclick="restart()" class="smiley">🤠</div>
+            <div class="timer">0.0</div>
+            <div class="marked">0</div>
         </div>
         <div class="difficulty">
-            <div class="diff diff1" onclick="difficulty(this)"></div>
-            <div class="diff diff2" onclick="difficulty(this)"></div>
-            <div class="diff diff3" onclick="difficulty(this)"></div>
+            <div id="one" class="diff diff1" onclick="difficulty(this)">EASY</div>
+            <div id="two" class="diff diff2" onclick="difficulty(this)">MEDIUM</div>
+            <div id="three" class="diff diff3" onclick="difficulty(this)">HARD</div>
         </div>
+        <div class="msg hide">GAME OVER</div>
         <div class="board">
         </div>
 
