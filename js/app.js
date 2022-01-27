@@ -10,8 +10,8 @@ var gGame;
 
 
 gLevel = {
-    SIZE: 4,
-    MINES: 2,
+    SIZE: 5,
+    MINES: 3,
     LIVES: 3
 };
 
@@ -38,7 +38,7 @@ function restart() {
     timer();
     gLevel.LIVES = 3;
     for (var i = 1; i <= gLevel.LIVES; i++) {
-        document.querySelector(`.life-${i}`).innerText = '❤️';
+        document.querySelector(`.life-${i}`).innerText = '💚';
     }
     document.querySelector('.marked').innerText = gGame.markedCount;
     document.querySelector('.smiley').innerText = '🤠';
@@ -139,7 +139,7 @@ function mark(ev) {
         return;
     };
     cell.isMarked = true;
-    renderCell(idx, jdx, '+');
+    renderCell(idx, jdx, '📍');
     gGame.markedCount++;
     // console.log(gGame.markedCount);
     document.querySelector('.marked').innerText = gGame.markedCount;
@@ -147,15 +147,15 @@ function mark(ev) {
 }
 
 function difficulty(ev) {
-    console.dir(ev);
 
+    gGame.isOn = false;
     switch (ev.id) {
         case 'one':
-            gLevel.SIZE = 4;
-            gLevel.MINES = 2;
+            gLevel.SIZE = 5;
+            gLevel.MINES = 3;
             break;
         case 'two':
-            gLevel.SIZE = 6;
+            gLevel.SIZE = 7;
             gLevel.MINES = 8;
             break;
         case 'three':

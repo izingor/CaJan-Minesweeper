@@ -68,18 +68,7 @@ function timer() {
     gInterval = setInterval(function() {
         var delta = (Date.now() - timestamp) / 1000;
 
-        // switch (delta) {
-        //     case delta < 10:
-        //         delta = delta.toString()
-        //         delta = delta.substring(0, 3);
-        //         elTimer.innerText = delta
-        //         break;
-        //     case delta > 10:
-        //         delta = delta.toString()
-        //         delta = delta.substring(0, 2);
-        //         break;
-        //     }
-        elTimer.innerText = delta
+        elTimer.innerText = Math.floor(delta);
     }, 41);
 }
 

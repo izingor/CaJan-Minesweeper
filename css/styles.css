@@ -1,14 +1,14 @@
 body {
-    background-color: #35589A;
+    background-color: #FEFFDE;
     font-family: 'Fredoka One', cursive;
 }
 
 .main-container {
-    background-color: yellow;
+    background-color: #FEFFDE;
     position: relative;
-    height: 90vh;
+    height: 50rem;
     width: 55rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,11 +19,11 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: black;
+    background-color: #FEFFDE;
     width: 20rem;
     height: 3rem;
     top: 2%;
-    color: #F14A16;
+    color: #52734D;
     font-size: 3rem;
 }
 
@@ -31,11 +31,11 @@ body {
     position: absolute;
     align-items: center;
     justify-content: center;
-    background-color: lightseagreen;
+    background-color: #FEFFDE;
     height: 30rem;
     width: 30rem;
     display: flex;
-    top: 18rem;
+    top: 12.7rem;
 }
 
 .lives {
@@ -43,10 +43,10 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: #35589A;
+    background-color: #FEFFDE;
     width: 12rem;
     height: 4rem;
-    top: 13.5rem;
+    top: 8.5rem;
     /* left: auto; */
 }
 
@@ -55,10 +55,10 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: blue;
+    background-color: #FEFFDE;
     width: 30rem;
     height: 3rem;
-    top: 10rem;
+    top: 5rem;
 }
 
 .board td {
@@ -66,14 +66,14 @@ body {
     height: 3rem;
     text-align: center;
     font-size: 1.5em;
-    color: black;
-    background-color: #FC9918;
+    color: #52734D;
+    background-color: #91C788;
     transition: 1s;
     border-radius: 0.5rem;
 }
 
 .board td:hover {
-    background-color: #F14A16;
+    background-color: #DDFFBC;
     transform: scale(0.95);
 }
 
@@ -85,10 +85,10 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    background-color: red;
+    background-color: #FEFFDE;
     width: 20rem;
     height: 5rem;
-    bottom: 1%;
+    top: 43rem;
     /* right: %; */
 }
 
@@ -104,41 +104,45 @@ body {
     position: absolute;
     width: 5rem;
     height: 3rem;
-    background-color: #FC9918;
-    color: black;
+    background-color: #FEFFDE;
+    color: #52734D;
     border-radius: 1rem;
     transition: 1s;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 .diff1:hover,
 .diff2:hover,
 .diff3:hover,
 .smiley:hover {
-    transform: scale(0.9);
-    background-color: #F14A16;
+    transform: scale(1.15);
+    /* background-color: #F14A16; */
 }
 
 .diff1 {
-    /* bottom: 0%; */
     left: 0%;
+    font-size: 1rem;
 }
 
 .diff2 {
     /* bottom: 7.5rem; */
+    font-size: 1rem;
 }
 
 .diff3 {
     /* top: 0%; */
     right: 0%;
+    font-size: 1rem;
 }
 
 .timer {
     right: 0%;
+    top: 4.5rem;
 }
 
 .marked {
     left: 0%;
+    top: 4.5rem;
 }
 
 .life-1,
@@ -150,19 +154,19 @@ body {
     position: absolute;
     width: 3rem;
     height: 3rem;
-    background-color: #FC9918;
-    color: black;
+    background-color: #FEFFDE;
+    color: #52734D;
     border-radius: 1rem;
     transition: 1s;
     font-size: 20px;
 }
 
 .life-1 {
-    left: 0%;
+    left: 13%;
 }
 
 .life-3 {
-    right: 0%;
+    right: 13%;
 }
 
 .shake-effect {
@@ -212,9 +216,13 @@ body {
     align-items: center;
     position: absolute;
     width: 20rem;
-    height: 15rem;
-    top: 25.5rem;
+    height: 5rem;
+    top: 8.4rem;
     z-index: 1;
-    color: royalblue;
-    font-size: 50px;
+    color: #52734D;
+    font-size: 1.5rem;
+}
+
+.smiley {
+    font-size: 3rem;
 }
