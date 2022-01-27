@@ -26,7 +26,6 @@ function init() {
 
     gBoard = buildBoard(gLevel.SIZE, gLevel.MINES);
     printMat(gBoard);
-    // console.table(gBoard);
 }
 
 function restart() {
@@ -43,7 +42,6 @@ function restart() {
     }
     document.querySelector('.marked').innerText = gGame.markedCount;
     document.querySelector('.smiley').innerText = '🤠';
-    // document.querySelector('.msg').innerText = '';
 }
 
 function clicked(ev) {
@@ -54,7 +52,7 @@ function clicked(ev) {
     var cell = gBoard[idx][jdx];
 
     if (cell.isShown === true) return;
-    if (cell.isMarked) return
+    if (cell.isMarked) return;
     if (cell.isMine) {
         document.querySelector(`.life-${gLevel.LIVES}`).innerText = '';
         gLevel.LIVES--;
@@ -141,7 +139,6 @@ function mark(ev) {
     cell.isMarked = true;
     renderCell(idx, jdx, '📍');
     gGame.markedCount++;
-    // console.log(gGame.markedCount);
     document.querySelector('.marked').innerText = gGame.markedCount;
     checkVictory();
 }
@@ -184,7 +181,6 @@ function checkVictory() {
 
 
     console.log('flagged:', flaggedCount, 'shownCount:', shownCount);
-    // console.table(gBoard);
 }
 
 function victory() {
