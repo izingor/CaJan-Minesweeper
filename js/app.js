@@ -8,8 +8,8 @@ var gLevel;
 var gGame;
 
 gLevel = {
-    SIZE: 5,
-    MINES: 3,
+    SIZE: 4,
+    MINES: 2,
     LIVES: 3,
 };
 
@@ -149,16 +149,16 @@ function difficulty(ev) {
     gGame.isOn = false;
     switch (ev.id) {
         case 'one':
-            gLevel.SIZE = 5;
-            gLevel.MINES = 3;
+            gLevel.SIZE = 4;
+            gLevel.MINES = 2;
             break;
         case 'two':
-            gLevel.SIZE = 7;
-            gLevel.MINES = 8;
+            gLevel.SIZE = 8;
+            gLevel.MINES = 12;
             break;
         case 'three':
-            gLevel.SIZE = 9;
-            gLevel.MINES = 15;
+            gLevel.SIZE = 12;
+            gLevel.MINES = 30;
             break;
     }
     clearInterval(gInterval);

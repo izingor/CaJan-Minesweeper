@@ -62,8 +62,8 @@ body {
 }
 
 .board td {
-    width: 3rem;
-    height: 3rem;
+    width: 2.3rem;
+    height: 2.3rem;
     text-align: center;
     font-size: 1.5em;
     color: #52734d;
