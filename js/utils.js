@@ -48,9 +48,7 @@ function createMines(board) {
     for (var i = 0; i < gLevel.MINES; i++) {
         board[cells[i].i][cells[i].j].isMine = true;
     }
-    // var randomI = getRandomInt(1, gLevel.SIZE - 1);
-    // var randomJ = getRandomInt(1, gLevel.SIZE - 1);
-    // board[randomJ][randomI].isMine = true;
+
 }
 
 function renderCell(i, j, value) {
@@ -81,4 +79,25 @@ function shuffleArray(cells) {
         cells[j] = temp;
     }
     return cells;
+}
+
+
+function restartAnimation() {
+    document.querySelector('.smiley').classList.remove('scaling');
+    document.querySelector('#start-btn').classList.remove('scaling');
+    document.querySelector('#start-btn').classList.add('start-clicked');
+    var hearts = document.querySelectorAll('.heart');
+    for (var i = 0; i < hearts.length; i++) {
+        hearts[i].classList.add('life');
+    };
+}
+
+function endAnimation() {
+    document.querySelector('.smiley').classList.add('scaling');
+    document.querySelector('#start-btn').classList.add('scaling');
+    document.querySelector('#start-btn').classList.remove('start-clicked');
+    var hearts = document.querySelectorAll('.heart');
+    for (var i = 0; i < hearts.length; i++) {
+        hearts[i].classList.remove('life');
+    };
 }

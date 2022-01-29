@@ -15,12 +15,13 @@
     <div class="main-container" oncontextmenu="return false">
         <div class="headline">MineSweeper</div>
         <div class="lives">
-            <div class="life-1">💚</div>
-            <div class="life-2">💚</div>
-            <div class="life-3">💚</div>
+            <div class="heart life-1">💚</div>
+            <div class="heart life-2">💚</div>
+            <div class="heart life-3">💚</div>
+            <div id="start-btn" class="start scaling" onclick="restart()">Start</div>
         </div>
         <div class="score">
-            <div onclick="restart()" class="smiley scaling">🤠</div>
+            <div onclick="restart()" class="smiley ">🤠</div>
             <div class="timer">time 0</div>
             <div class="marked">📍 0</div>
         </div>
@@ -29,7 +30,6 @@
             <div id="two" class="diff diff2" onclick="difficulty(this)">MEDIUM</div>
             <div id="three" class="diff diff3" onclick="difficulty(this)">HARD</div>
         </div>
-        <div class="msg hide">GAME OVER</div>
         <div class="board">
         </div>
 
