@@ -163,6 +163,7 @@ function difficulty(ev) {
     }
     clearInterval(gInterval);
     init();
+    endAnimation();
 }
 
 function checkVictory() {
